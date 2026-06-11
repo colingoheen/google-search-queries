@@ -32,9 +32,10 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 .topic-sub{font-size:12px;color:#555}
 .topic-arrow{font-size:24px;color:#333}
 
-/* VERTICAL VIDEO - 9:16 */
-.video-wrap{position:relative;width:60%;margin:0 auto 20px;padding-bottom:106.67%;background:#111;border-radius:12px;overflow:hidden}
-.video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px}
+/* vertical 9:16 video container — 60% wide, centered */
+.video-outer{width:60%;margin:0 auto 20px;}
+.video-wrap{position:relative;padding-top:177.77777777777777%;border-radius:12px;overflow:hidden;background:#111;}
+.video-wrap iframe{border:none;position:absolute;top:0;left:0;height:100%;width:100%;}
 
 .intro-label{font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
 .script-line{display:flex;gap:12px;margin-bottom:12px}
@@ -94,8 +95,10 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 <div class="topbar-title" id="intro-topbar-title"></div>
 </div>
 <div class="scroll">
-<div class="video-wrap">
-<video id="intro-video" controls playsinline muted preload="none"></video>
+<div class="video-outer">
+  <div class="video-wrap">
+    <iframe id="intro-video" src="" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+  </div>
 </div>
 <div class="intro-label">Intro Script</div>
 <div id="intro-script-content"></div>
@@ -147,7 +150,7 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 const TOPICS = [
   {
     id:"bicycle", name:"Bicycle Kick", sub:"5 follow-up queries",
-    videoId:"1KvwmXFJnGrDBknvagalE5LMmR6iR7lUE",
+    videoSrc:"https://customer-7u4xprmze01z7rtq.cloudflarestream.com/1f222af8ade4075b477bced8feebb4ae/iframe?poster=https%3A%2F%2Fcustomer-7u4xprmze01z7rtq.cloudflarestream.com%2F1f222af8ade4075b477bced8feebb4ae%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&muted=true",
     intro:[
       {speaker:"HOST",text:"Hey, can you do this?"},
       {type:"stage",text:"Shows fan a video of a successful bicycle kick."},
@@ -173,7 +176,7 @@ const TOPICS = [
   },
   {
     id:"scorpion", name:"Scorpion Kick", sub:"2 follow-up queries",
-    videoId:"1qDH6wK3yXAfokdwWSj-b5ofDMkwgTDbg",
+    videoSrc:"https://customer-7u4xprmze01z7rtq.cloudflarestream.com/ce12ee749de50d4216b9f1e0f15276fe/iframe?poster=https%3A%2F%2Fcustomer-7u4xprmze01z7rtq.cloudflarestream.com%2Fce12ee749de50d4216b9f1e0f15276fe%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&muted=true",
     intro:[
       {speaker:"HOST",text:"Hey, can you do this?"},
       {type:"stage",text:"Shows fan a video of a successful scorpion kick."},
@@ -196,7 +199,7 @@ const TOPICS = [
   },
   {
     id:"volley", name:"Volley", sub:"5 follow-up queries",
-    videoId:"1SjzV7O7MLbrUTDtPVgkWRmoYf5cohbfO",
+    videoSrc:"https://customer-7u4xprmze01z7rtq.cloudflarestream.com/8129dc8c9051b2a43eeb20c79474a9e9/iframe?poster=https%3A%2F%2Fcustomer-7u4xprmze01z7rtq.cloudflarestream.com%2F8129dc8c9051b2a43eeb20c79474a9e9%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&muted=true",
     intro:[
       {speaker:"HOST",text:"Hey, you think you can score a volley?"},
       {type:"stage",text:"Shows fan a video of a successful volley goal."},
@@ -222,7 +225,7 @@ const TOPICS = [
   },
   {
     id:"keepie", name:"Keepie Uppie", sub:"3 follow-up queries",
-    videoId:"1-AXoruk9YW2wIKf91Vr4pLoPfaw1N_Uf",
+    videoSrc:"https://customer-7u4xprmze01z7rtq.cloudflarestream.com/4bc00ebd3619ca2bd2d4f39b6c323f40/iframe?poster=https%3A%2F%2Fcustomer-7u4xprmze01z7rtq.cloudflarestream.com%2F4bc00ebd3619ca2bd2d4f39b6c323f40%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&muted=true",
     intro:[
       {speaker:"HOST",text:"Do you know how to do keepie uppies?"},
       {type:"stage",text:"Shows fan a video of a successful keepie uppies."},
@@ -255,8 +258,7 @@ function show(id) {
 }
 
 function goHome() {
-  const v = document.getElementById('intro-video');
-  v.pause(); v.src = '';
+  document.getElementById('intro-video').src = '';
   curTopic = null;
   show('s-home');
 }
@@ -299,11 +301,7 @@ function buildIntro(topic) {
 function openTopic(id) {
   curTopic = TOPICS.find(t => t.id === id);
   document.getElementById('intro-topbar-title').textContent = curTopic.name;
-  // Google Drive direct stream URL
-  const videoSrc = `https://drive.google.com/uc?export=download&id=${curTopic.videoId}`;
-  const v = document.getElementById('intro-video');
-  v.src = videoSrc;
-  v.load();
+  document.getElementById('intro-video').src = curTopic.videoSrc;
   document.getElementById('intro-script-content').innerHTML = buildIntro(curTopic);
   document.getElementById('main-query-text').textContent = curTopic.query;
   show('s-intro');
