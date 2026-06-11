@@ -11,19 +11,16 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 .screen{display:none;flex-direction:column;height:100%;overflow:hidden}
 .screen.active{display:flex}
 
-/* TOPBAR */
 .topbar{display:flex;align-items:center;gap:10px;padding:14px 16px 12px;border-bottom:1px solid #222;flex-shrink:0;background:#0f0f0f}
 .back-btn{background:none;border:none;color:#4fc3f7;font-size:15px;cursor:pointer;display:flex;align-items:center;gap:6px;padding:4px 0;font-family:inherit}
 .back-arrow{font-size:18px;line-height:1}
 .topbar-title{font-size:13px;color:#555;flex:1;text-transform:uppercase;letter-spacing:0.06em}
 .topbar-brand{font-size:13px;font-weight:600;color:#f0f0f0;letter-spacing:0.02em}
 
-/* SCROLL */
 .scroll{flex:1;overflow-y:auto;padding:20px 16px;-webkit-overflow-scrolling:touch}
 .scroll::-webkit-scrollbar{width:3px}
 .scroll::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
 
-/* HOME */
 .brand-header{margin-bottom:24px}
 .brand-eyebrow{font-size:11px;color:#4fc3f7;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
 .brand-title{font-size:24px;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px}
@@ -31,42 +28,38 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 
 .topic-card{background:#1a1a1a;border:1px solid #252525;border-radius:14px;padding:18px 16px;margin-bottom:10px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color 0.15s}
 .topic-card:active{background:#222;border-color:#4fc3f7}
-.topic-left{}
 .topic-name{font-size:17px;font-weight:600;margin-bottom:3px}
 .topic-sub{font-size:12px;color:#555}
 .topic-arrow{font-size:24px;color:#333}
 
-/* INTRO SCREEN */
+/* VERTICAL VIDEO - 9:16 */
+.video-wrap{position:relative;width:60%;margin:0 auto 20px;padding-bottom:106.67%;background:#111;border-radius:12px;overflow:hidden}
+.video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px}
+
 .intro-label{font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
-.script-block{background:#1a1a1a;border:1px solid #252525;border-radius:12px;padding:16px;margin-bottom:14px}
 .script-line{display:flex;gap:12px;margin-bottom:12px}
 .script-line:last-child{margin-bottom:0}
-.speaker{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#555;flex-shrink:0;padding-top:2px;min-width:36px}
+.speaker{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;flex-shrink:0;padding-top:2px;min-width:36px}
 .speaker.host{color:#4fc3f7}
 .speaker.fan{color:#81c784}
 .line-text{font-size:15px;line-height:1.55;color:#e0e0e0}
 .stage-direction{font-size:13px;color:#555;font-style:italic;margin-bottom:12px;line-height:1.5;padding-left:4px}
 
-.query-btn{width:100%;background:#1a2a3a;border:1px solid #1e3a5f;border-radius:14px;padding:18px 16px;margin-top:6px;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background 0.15s,border-color 0.15s}
+.query-btn{width:100%;background:#1a2a3a;border:1px solid #1e3a5f;border-radius:14px;padding:18px 16px;margin-top:6px;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background 0.15s;font-family:inherit}
 .query-btn:active{background:#1e3a5f}
-.query-btn-inner{}
 .query-btn-label{font-size:11px;color:#4fc3f7;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px}
 .query-btn-text{font-size:16px;font-weight:600;color:#f0f0f0;line-height:1.35}
 .query-btn-arrow{font-size:22px;color:#4fc3f7;flex-shrink:0}
 
-/* RESPONSE SCREEN */
-.resp-query-wrap{margin-bottom:4px}
 .resp-query-label{font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
 .resp-query-text{font-size:19px;font-weight:700;line-height:1.3;color:#f0f0f0;margin-bottom:16px}
 .divider{height:1px;background:#1e1e1e;margin:16px 0}
-
 .resp-body{font-size:15px;line-height:1.7;color:#d0d0d0}
 .resp-body p{margin-bottom:10px}
 .rh{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4fc3f7;margin:16px 0 8px}
 .ri{display:flex;gap:10px;margin-bottom:8px}
 .rb{color:#4fc3f7;flex-shrink:0;margin-top:3px;font-size:13px}
 
-/* FOLLOW-UP SECTION */
 .fu-section{flex-shrink:0;border-top:1px solid #1e1e1e;background:#0f0f0f;padding:14px 16px 20px}
 .fu-label{font-size:11px;color:#444;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
 .fu-btn{width:100%;background:#1a1a1a;border:1px solid #252525;border-radius:12px;padding:13px 14px;margin-bottom:8px;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:inherit;transition:border-color 0.15s}
@@ -74,9 +67,6 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 .fu-btn:active{background:#222;border-color:#4fc3f7}
 .fu-btn-text{font-size:14px;color:#e0e0f0;line-height:1.35;flex:1}
 .fu-btn-arrow{font-size:18px;color:#333;flex-shrink:0}
-
-/* FOLLOW-UP RESPONSE */
-.back-to-query-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:#4fc3f7;font-size:14px;cursor:pointer;padding:0;font-family:inherit;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -97,17 +87,20 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 </div>
 </div>
 
-<!-- INTRO SCREEN -->
+<!-- INTRO -->
 <div class="screen" id="s-intro">
 <div class="topbar">
 <button class="back-btn" onclick="goHome()"><span class="back-arrow">←</span> Skills</button>
 <div class="topbar-title" id="intro-topbar-title"></div>
 </div>
 <div class="scroll">
+<div class="video-wrap">
+<video id="intro-video" controls playsinline muted preload="none"></video>
+</div>
 <div class="intro-label">Intro Script</div>
 <div id="intro-script-content"></div>
-<button class="query-btn" id="main-query-btn" onclick="openMainResponse()">
-<div class="query-btn-inner">
+<button class="query-btn" onclick="openMainResponse()">
+<div>
 <div class="query-btn-label">Tap to read query</div>
 <div class="query-btn-text" id="main-query-text"></div>
 </div>
@@ -116,25 +109,25 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 </div>
 </div>
 
-<!-- MAIN RESPONSE SCREEN -->
+<!-- MAIN RESPONSE -->
 <div class="screen" id="s-response">
 <div class="topbar">
 <button class="back-btn" onclick="goIntro()"><span class="back-arrow">←</span> <span id="resp-back-label">Back</span></button>
 <div class="topbar-title" id="resp-topbar-title"></div>
 </div>
-<div class="scroll" id="resp-scroll">
+<div class="scroll">
 <div class="resp-query-label">Query</div>
 <div class="resp-query-text" id="resp-query-text"></div>
 <div class="divider"></div>
 <div class="resp-body" id="resp-body"></div>
 </div>
-<div class="fu-section" id="fu-section">
+<div class="fu-section">
 <div class="fu-label">Follow-up questions</div>
 <div id="fu-buttons"></div>
 </div>
 </div>
 
-<!-- FOLLOW-UP RESPONSE SCREEN -->
+<!-- FOLLOW-UP RESPONSE -->
 <div class="screen" id="s-fu-response">
 <div class="topbar">
 <button class="back-btn" onclick="goResponse()"><span class="back-arrow">←</span> <span id="fu-back-label">Back</span></button>
@@ -148,155 +141,106 @@ html,body{height:100%;background:#0f0f0f;color:#f0f0f0;font-family:-apple-system
 </div>
 </div>
 
-</div><!-- end wrap -->
+</div>
 
 <script>
 const TOPICS = [
   {
-    id: "bicycle",
-    name: "Bicycle Kick",
-    sub: "4 follow-up queries",
-    intro: [
-      { speaker: "HOST", text: "Hey, can you do this?" },
-      { type: "stage", text: "Shows fan a video of a successful bicycle kick." },
-      { speaker: "FAN", text: "I don't know!" },
-      { speaker: "HOST", text: "Let's see if Google Search can teach you how in 5 minutes." },
-      { speaker: "FAN", text: "Let's do it." },
-      { speaker: "HOST", text: "Alright, first let's see how you do on your own!" },
-      { type: "stage", text: "The host sets up the fan to attempt the bicycle kick, which they inevitably fail." },
-      { speaker: "HOST", text: "You didn't exactly nail that. Want to see if Google can help you do better?" },
-      { speaker: "FAN", text: "I'm ready!" },
-      { type: "stage", text: "As the host types in his phone, he/she reads aloud from the below pre-approved query." },
+    id:"bicycle", name:"Bicycle Kick", sub:"5 follow-up queries",
+    videoId:"1KvwmXFJnGrDBknvagalE5LMmR6iR7lUE",
+    intro:[
+      {speaker:"HOST",text:"Hey, can you do this?"},
+      {type:"stage",text:"Shows fan a video of a successful bicycle kick."},
+      {speaker:"FAN",text:"I don't know!"},
+      {speaker:"HOST",text:"Let's see if Google Search can teach you how in 5 minutes."},
+      {speaker:"FAN",text:"Let's do it."},
+      {speaker:"HOST",text:"Alright, first let's see how you do on your own!"},
+      {type:"stage",text:"The host sets up the fan to attempt the bicycle kick, which they inevitably fail."},
+      {speaker:"HOST",text:"You didn't exactly nail that. Want to see if Google can help you do better?"},
+      {speaker:"FAN",text:"I'm ready!"},
+      {type:"stage",text:"As the host types in his phone, he/she reads aloud from the below pre-approved query."},
     ],
-    query: "Can you teach me how to do a bicycle kick?",
-    response: "The Core Blueprint\n● Back to Target: Stand with your back completely toward your target or the goal.\n● Eyes on Ball: Keep your eyes locked on the flight of the incoming ball.\n● The Launch: Plant your kicking foot. Jump and drive your non-kicking knee upward.\n● The Scissor: Throw your shoulders back horizontally. Switch your legs rapidly mid-air.\n● The Strike: Snap your kicking foot up. Strike the ball cleanly with your laces.\n● The Landing: Break your fall with your arms. Land sideways on your upper back.",
-    afterResponse: "Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
-    followUps: [
-      {
-        query: "How do I know when to start my jump?",
-        response: "To time your launch perfectly, you must start your jump when the ball is roughly 1 to 2 feet above your head and slightly behind your shoulders. Starting your jump at this exact threshold gives your body time to invert before the ball falls into your strike zone."
-      },
-      {
-        query: "What part of my foot should make contact with the ball?",
-        response: "You must make contact with the ball using the laces of your shoe (the instep). Striking with this flat, hard surface provides the maximum amount of power and control.\n● Keep your ankle locked completely straight and your toes pointed away from your body.\n● Strike the ball directly in its center or slightly above the center."
-      },
-      {
-        query: "Every time I swing, I miss. Any tips on what to tweak?",
-        response: "The Fix: Wait until the ball starts its descent. You want to strike it when it is roughly head height (if you were standing)."
-      },
-      {
-        query: "How do I kick it lower?",
-        response: "Strike the Upper Half: Hit the top or center of the ball. Striking underneath it launches it skyward."
-      },
-      {
-        query: "How am I supposed to land?",
-        response: "● Tuck your chin: Press your chin firmly against your chest to protect your head from hitting the ground.\n● Twist your torso: Rotate your body sideways mid-air so your side, not your spine, faces the ground.\n● Slap the ground: Extend your arms out at a 45-degree angle and slap the grass with your palms and forearms just before your body lands.\n● Roll onto your shoulder: Absorb the remaining force by rolling across your upper back and the back of your shoulder."
-      }
+    query:"Can you teach me how to do a bicycle kick?",
+    response:"The Core Blueprint\n● Back to Target: Stand with your back completely toward your target or the goal.\n● Eyes on Ball: Keep your eyes locked on the flight of the incoming ball.\n● The Launch: Plant your kicking foot. Jump and drive your non-kicking knee upward.\n● The Scissor: Throw your shoulders back horizontally. Switch your legs rapidly mid-air.\n● The Strike: Snap your kicking foot up. Strike the ball cleanly with your laces.\n● The Landing: Break your fall with your arms. Land sideways on your upper back.",
+    afterResponse:"Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
+    followUps:[
+      {query:"How do I know when to start my jump?",response:"To time your launch perfectly, you must start your jump when the ball is roughly 1 to 2 feet above your head and slightly behind your shoulders. Starting your jump at this exact threshold gives your body time to invert before the ball falls into your strike zone."},
+      {query:"What part of my foot should make contact with the ball?",response:"You must make contact with the ball using the laces of your shoe (the instep). Striking with this flat, hard surface provides the maximum amount of power and control.\n● Keep your ankle locked completely straight and your toes pointed away from your body.\n● Strike the ball directly in its center or slightly above the center."},
+      {query:"Every time I swing, I miss. Any tips on what to tweak?",response:"The Fix: Wait until the ball starts its descent. You want to strike it when it is roughly head height (if you were standing)."},
+      {query:"How do I kick it lower?",response:"Strike the Upper Half: Hit the top or center of the ball. Striking underneath it launches it skyward."},
+      {query:"How am I supposed to land?",response:"● Tuck your chin: Press your chin firmly against your chest to protect your head from hitting the ground.\n● Twist your torso: Rotate your body sideways mid-air so your side, not your spine, faces the ground.\n● Slap the ground: Extend your arms out at a 45-degree angle and slap the grass with your palms and forearms just before your body lands.\n● Roll onto your shoulder: Absorb the remaining force by rolling across your upper back and the back of your shoulder."}
     ]
   },
   {
-    id: "scorpion",
-    name: "Scorpion Kick",
-    sub: "2 follow-up queries",
-    intro: [
-      { speaker: "HOST", text: "Hey, can you do this?" },
-      { type: "stage", text: "Shows fan a video of a successful scorpion kick." },
-      { speaker: "FAN", text: "No, I wish! That looks crazy." },
-      { speaker: "HOST", text: "Should we see if Google Search can teach you how in 5 minutes?" },
-      { speaker: "FAN", text: "Let's do it." },
-      { speaker: "HOST", text: "Alright, first let's see how you do on your own!" },
-      { type: "stage", text: "The host sets up the fan to attempt the scorpion kick, which they inevitably fail." },
-      { speaker: "HOST", text: "Okay, looks like we need a little practice. Let's see if Google can help you do better." },
-      { speaker: "FAN", text: "I'm ready!" },
-      { type: "stage", text: "As the host types in his phone, he/she reads aloud from the below pre-approved query." },
+    id:"scorpion", name:"Scorpion Kick", sub:"2 follow-up queries",
+    videoId:"1qDH6wK3yXAfokdwWSj-b5ofDMkwgTDbg",
+    intro:[
+      {speaker:"HOST",text:"Hey, can you do this?"},
+      {type:"stage",text:"Shows fan a video of a successful scorpion kick."},
+      {speaker:"FAN",text:"No, I wish! That looks crazy."},
+      {speaker:"HOST",text:"Should we see if Google Search can teach you how in 5 minutes?"},
+      {speaker:"FAN",text:"Let's do it."},
+      {speaker:"HOST",text:"Alright, first let's see how you do on your own!"},
+      {type:"stage",text:"The host sets up the fan to attempt the scorpion kick, which they inevitably fail."},
+      {speaker:"HOST",text:"Okay, looks like we need a little practice. Let's see if Google can help you do better."},
+      {speaker:"FAN",text:"I'm ready!"},
+      {type:"stage",text:"As the host types in his phone, he/she reads aloud from the below pre-approved query."},
     ],
-    query: "Can you break down how to pull off a scorpion kick?",
-    response: "Phase 1: The Forward Dive\n● Positioning: Stand facing the goal, tracking an incoming cross or lob. Let the ball float slightly behind the vertical plane of your body.\n● The Launch: Plant both feet and dive forward horizontally, throwing your chest and arms out toward the ground. Your torso should be parallel to the turf mid-air.\nPhase 2: The Spinal Arch\n● The Loaded Spring: The moment your feet leave the ground, aggressively bend both knees to a 90-degree angle, bringing your calves toward your thighs.\n● Lower Back Flex: Arch your lower back deeply to pivot your hips and swing your bent legs up over your glutes. Your heels should now face the sky.\nPhase 3: The Dual-Heel Strike\n● The Flick: Whip your heels forward over your head in a rapid, snapping motion. Keep your ankles locked perfectly rigid.\n● The Surface: Strike the exact center of the ball using the soles or heels of your cleats.\n● Eyes on Target: Keep your chin up slightly during the flight to track the ball into the net over your shoulder.\nPhase 4: The Chest-Slide Landing\n● Hand Placement: Extend both hands out in front of your face with your palms wide to meet the ground first.\n● Elbow Flexion: Bend your elbows as your hands make contact to absorb the initial downward momentum.\n● The Slide: Lower your chest and stomach to the grass, sliding forward to distribute the remaining force. Keep your legs elevated until your torso stops moving.",
-    afterResponse: "Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
-    followUps: [
-      {
-        query: "Where should I look?",
-        response: "● Keep your eyes locked onto the ball as it leaves the crosser's foot until it passes just slightly over your shoulder.\n● Trust your muscle memory for the split second the ball drops behind your head. You will not actually see your heel hit the ball.\n● The moment you dive, snap your eyes straight down to the grass. You must see exactly where your hands are going to plant so you can absorb the impact safely.\n● Do not look at the goal: Trying to watch where the ball goes will wrench your neck sideways, ruining your balance and forcing a dangerous landing."
-      },
-      {
-        query: "How do I generate enough power to get the ball in the net?",
-        response: "● The Aggressive Forward Dive: The faster and harder you dive forward, the more kinetic energy you create.\n● The Rapid Knee Snap: Keep your legs extended during the first millisecond of the dive, then violently contract your hamstrings to snap your heels toward your glutes.\n● The Rigid Ankle Lock: You must lock your ankle joint completely solid at the moment of impact."
-      }
+    query:"Can you break down how to pull off a scorpion kick?",
+    response:"Phase 1: The Forward Dive\n● Positioning: Stand facing the goal, tracking an incoming cross or lob. Let the ball float slightly behind the vertical plane of your body.\n● The Launch: Plant both feet and dive forward horizontally, throwing your chest and arms out toward the ground. Your torso should be parallel to the turf mid-air.\nPhase 2: The Spinal Arch\n● The Loaded Spring: The moment your feet leave the ground, aggressively bend both knees to a 90-degree angle, bringing your calves toward your thighs.\n● Lower Back Flex: Arch your lower back deeply to pivot your hips and swing your bent legs up over your glutes. Your heels should now face the sky.\nPhase 3: The Dual-Heel Strike\n● The Flick: Whip your heels forward over your head in a rapid, snapping motion. Keep your ankles locked perfectly rigid.\n● The Surface: Strike the exact center of the ball using the soles or heels of your cleats.\n● Eyes on Target: Keep your chin up slightly during the flight to track the ball into the net over your shoulder.\nPhase 4: The Chest-Slide Landing\n● Hand Placement: Extend both hands out in front of your face with your palms wide to meet the ground first.\n● Elbow Flexion: Bend your elbows as your hands make contact to absorb the initial downward momentum.\n● The Slide: Lower your chest and stomach to the grass, sliding forward to distribute the remaining force. Keep your legs elevated until your torso stops moving.",
+    afterResponse:"Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
+    followUps:[
+      {query:"Where should I look?",response:"● Keep your eyes locked onto the ball as it leaves the crosser's foot until it passes just slightly over your shoulder.\n● Trust your muscle memory for the split second the ball drops behind your head. You will not actually see your heel hit the ball.\n● The moment you dive, snap your eyes straight down to the grass. You must see exactly where your hands are going to plant so you can absorb the impact safely.\n● Do not look at the goal: Trying to watch where the ball goes will wrench your neck sideways, ruining your balance and forcing a dangerous landing."},
+      {query:"How do I generate enough power to get the ball in the net?",response:"● The Aggressive Forward Dive: The faster and harder you dive forward, the more kinetic energy you create.\n● The Rapid Knee Snap: Keep your legs extended during the first millisecond of the dive, then violently contract your hamstrings to snap your heels toward your glutes.\n● The Rigid Ankle Lock: You must lock your ankle joint completely solid at the moment of impact."}
     ]
   },
   {
-    id: "volley",
-    name: "Volley",
-    sub: "5 follow-up queries",
-    intro: [
-      { speaker: "HOST", text: "Hey, you think you can score a volley?" },
-      { type: "stage", text: "Shows fan a video of a successful volley goal." },
-      { speaker: "FAN", text: "Looks tricky, would definitely be cool if I could though." },
-      { speaker: "HOST", text: "Wanna see if Google Search can teach you how in 5 minutes?" },
-      { speaker: "FAN", text: "Let's do it." },
-      { speaker: "HOST", text: "Alright, first let's see how you do on your own!" },
-      { type: "stage", text: "The host sets up the fan to attempt to volley, which they inevitably fail." },
-      { speaker: "HOST", text: "Not as easy as it looks, huh? Should we see if Google can help you nail it?" },
-      { speaker: "FAN", text: "Yes please!" },
-      { type: "stage", text: "As the host types in his phone, he/she reads aloud from the below pre-approved query." },
+    id:"volley", name:"Volley", sub:"5 follow-up queries",
+    videoId:"1SjzV7O7MLbrUTDtPVgkWRmoYf5cohbfO",
+    intro:[
+      {speaker:"HOST",text:"Hey, you think you can score a volley?"},
+      {type:"stage",text:"Shows fan a video of a successful volley goal."},
+      {speaker:"FAN",text:"Looks tricky, would definitely be cool if I could though."},
+      {speaker:"HOST",text:"Wanna see if Google Search can teach you how in 5 minutes?"},
+      {speaker:"FAN",text:"Let's do it."},
+      {speaker:"HOST",text:"Alright, first let's see how you do on your own!"},
+      {type:"stage",text:"The host sets up the fan to attempt to volley, which they inevitably fail."},
+      {speaker:"HOST",text:"Not as easy as it looks, huh? Should we see if Google can help you nail it?"},
+      {speaker:"FAN",text:"Yes please!"},
+      {type:"stage",text:"As the host types in his phone, he/she reads aloud from the below pre-approved query."},
     ],
-    query: "Can you teach me how to score a volley?",
-    response: "● Track the Flight: Keep your eyes locked on the ball. Never look away until your foot makes physical contact.\n● The Plant Foot: Place your non-kicking foot beside or slightly behind where the ball will drop. Point its toes directly toward your target or the goal.\n● Keep Your Knee Over the Ball: Lean your chest forward and position the knee of your kicking leg directly over the ball at the moment of contact. This mechanical shift keeps your shot low and driven.\n● The Striking Surface: Hit the exact middle or upper-middle section of the ball cleanly with your laces.\n● Control the Follow-Through: Drive your leg straight through the center of the ball toward the target. Do not swing wildly across your body.\n3 Rules to Control Trajectory\n● If the ball flies over the crossbar: You are leaning back or hitting the bottom half of the ball. Lean your chest forward over your thigh to force the trajectory down.\n● The Waist-Height Rule: The easiest place to strike a volley is between your knee and waist height. If the ball is chest-high, wait for it to drop or use a side-volley technique.",
-    afterResponse: "Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
-    followUps: [
-      {
-        query: "What's the most important part of the volley to get right?",
-        response: "The single most important part of the volley to get right is locking your ankle joint completely rigid with your toes pointed down. If your ankle is loose or floppy at the millisecond of contact, every other mechanical adjustment fails."
-      },
-      {
-        query: "How do I keep the ball low?",
-        response: "● Force your shoulders and chest forward, pointing them down toward the grass rather than up at the sky.\n● Raise your kicking leg so that your knee joint is physically positioned directly above the ball when you strike it.\n● Swing your leg straight forward along a horizontal plane through the line of the ball. Do not scoop your foot upward during the follow-through."
-      },
-      {
-        query: "Am I supposed to follow through the ball?",
-        response: "Yes, you must follow through the ball, driving your leg straight toward your target and landing forward on your kicking foot."
-      },
-      {
-        query: "How do I aim the ball?",
-        response: "Point your plant foot: Place your non-kicking foot flat on the ground, pointing its toes directly at your target."
-      },
-      {
-        query: "Where do I strike the ball on my foot?",
-        response: "You must strike the ball directly on your laces (the instep of your foot) for maximum power and control."
-      }
+    query:"Can you teach me how to score a volley?",
+    response:"● Track the Flight: Keep your eyes locked on the ball. Never look away until your foot makes physical contact.\n● The Plant Foot: Place your non-kicking foot beside or slightly behind where the ball will drop. Point its toes directly toward your target or the goal.\n● Keep Your Knee Over the Ball: Lean your chest forward and position the knee of your kicking leg directly over the ball at the moment of contact. This mechanical shift keeps your shot low and driven.\n● The Striking Surface: Hit the exact middle or upper-middle section of the ball cleanly with your laces.\n● Control the Follow-Through: Drive your leg straight through the center of the ball toward the target. Do not swing wildly across your body.\n3 Rules to Control Trajectory\n● If the ball flies over the crossbar: You are leaning back or hitting the bottom half of the ball. Lean your chest forward over your thigh to force the trajectory down.\n● The Waist-Height Rule: The easiest place to strike a volley is between your knee and waist height. If the ball is chest-high, wait for it to drop or use a side-volley technique.",
+    afterResponse:"Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
+    followUps:[
+      {query:"What's the most important part of the volley to get right?",response:"The single most important part of the volley to get right is locking your ankle joint completely rigid with your toes pointed down. If your ankle is loose or floppy at the millisecond of contact, every other mechanical adjustment fails."},
+      {query:"How do I keep the ball low?",response:"● Force your shoulders and chest forward, pointing them down toward the grass rather than up at the sky.\n● Raise your kicking leg so that your knee joint is physically positioned directly above the ball when you strike it.\n● Swing your leg straight forward along a horizontal plane through the line of the ball. Do not scoop your foot upward during the follow-through."},
+      {query:"Am I supposed to follow through the ball?",response:"Yes, you must follow through the ball, driving your leg straight toward your target and landing forward on your kicking foot."},
+      {query:"How do I aim the ball?",response:"Point your plant foot: Place your non-kicking foot flat on the ground, pointing its toes directly at your target."},
+      {query:"Where do I strike the ball on my foot?",response:"You must strike the ball directly on your laces (the instep of your foot) for maximum power and control."}
     ]
   },
   {
-    id: "keepie",
-    name: "Keepie Uppie",
-    sub: "3 follow-up queries",
-    intro: [
-      { speaker: "HOST", text: "Do you know how to do keepie uppies?" },
-      { type: "stage", text: "Shows fan a video of a successful keepie uppies." },
-      { speaker: "FAN", text: "Yeah, I'm not very good though…" },
-      { speaker: "HOST", text: "Wanna see if Google Search can make you better?" },
-      { speaker: "FAN", text: "Most definitely." },
-      { speaker: "HOST", text: "Alright, first let's see how many you can get on your own." },
-      { type: "stage", text: "Fan attempts a number of keepie uppies, which we mark on screen graphically." },
-      { speaker: "HOST", text: "Let's let Google help you better your total." },
-      { type: "stage", text: "As the host types in his phone, he/she reads aloud from the below pre-approved query." },
+    id:"keepie", name:"Keepie Uppie", sub:"3 follow-up queries",
+    videoId:"1-AXoruk9YW2wIKf91Vr4pLoPfaw1N_Uf",
+    intro:[
+      {speaker:"HOST",text:"Do you know how to do keepie uppies?"},
+      {type:"stage",text:"Shows fan a video of a successful keepie uppies."},
+      {speaker:"FAN",text:"Yeah, I'm not very good though…"},
+      {speaker:"HOST",text:"Wanna see if Google Search can make you better?"},
+      {speaker:"FAN",text:"Most definitely."},
+      {speaker:"HOST",text:"Alright, first let's see how many you can get on your own."},
+      {type:"stage",text:"Fan attempts a number of keepie uppies, which we mark on screen graphically."},
+      {speaker:"HOST",text:"Let's let Google help you better your total."},
+      {type:"stage",text:"As the host types in his phone, he/she reads aloud from the below pre-approved query."},
     ],
-    query: "Can you teach me how to keepie uppie?",
-    response: "● The Foot Surface: Point your toes slightly upward toward your shin. Lock your ankle tight to create a flat, rigid platform with your laces.\n● The Strike Point: Hit the ball directly on its bottom center. Avoid hitting it with your toes, which causes the ball to spin wildly away from you.\n● The Height: Tap the ball gently so it rises no higher than your waist or chest. Low touches are much easier to control.\n● The Spin: A perfect keepie-uppie touch should have a slight backspin. This brings the ball naturally back toward your body rather than bouncing away.",
-    afterResponse: "Fan attempts to keep the ball up. They keep trying to get a high number. After another fail, the fan may ask follow up questions.",
-    followUps: [
-      {
-        query: "How do I get good at keepie uppies?",
-        response: "Keep the Ball Below Your Waist: Use soft, cushioned taps. The ball should never rise higher than your belly button."
-      },
-      {
-        query: "How do I get the timing right?",
-        response: "You must wait for the ball to drop completely down to shin height before making soft contact. Execute your touch when the ball is about 6 to 12 inches off the ground.\n● Don't Meet the Ball Hard: If your foot moves upward too fast, the ball will rocket into the air. Your foot should travel upward at a slow, controlled speed, almost catching and redirecting the ball rather than smashing it."
-      },
-      {
-        query: "What part of my foot am I supposed to hit the ball with?",
-        response: "You must hit the ball with the flat, hard area where your shoelaces sit (the instep)."
-      }
+    query:"Can you teach me how to keepie uppie?",
+    response:"● The Foot Surface: Point your toes slightly upward toward your shin. Lock your ankle tight to create a flat, rigid platform with your laces.\n● The Strike Point: Hit the ball directly on its bottom center. Avoid hitting it with your toes, which causes the ball to spin wildly away from you.\n● The Height: Tap the ball gently so it rises no higher than your waist or chest. Low touches are much easier to control.\n● The Spin: A perfect keepie-uppie touch should have a slight backspin. This brings the ball naturally back toward your body rather than bouncing away.",
+    afterResponse:"Fan attempts to keep the ball up. They keep trying to get a high number. After another fail, the fan may ask follow up questions.",
+    followUps:[
+      {query:"How do I get good at keepie uppies?",response:"Keep the Ball Below Your Waist: Use soft, cushioned taps. The ball should never rise higher than your belly button."},
+      {query:"How do I get the timing right?",response:"You must wait for the ball to drop completely down to shin height before making soft contact. Execute your touch when the ball is about 6 to 12 inches off the ground.\n● Don't Meet the Ball Hard: If your foot moves upward too fast, the ball will rocket into the air. Your foot should travel upward at a slow, controlled speed, almost catching and redirecting the ball rather than smashing it."},
+      {query:"What part of my foot am I supposed to hit the ball with?",response:"You must hit the ball with the flat, hard area where your shoelaces sit (the instep)."}
     ]
   }
 ];
@@ -310,19 +254,21 @@ function show(id) {
   if (sc) sc.scrollTop = 0;
 }
 
-function goHome() { curTopic = null; show('s-home'); }
+function goHome() {
+  const v = document.getElementById('intro-video');
+  v.pause(); v.src = '';
+  curTopic = null;
+  show('s-home');
+}
 function goIntro() { show('s-intro'); }
 function goResponse() { show('s-response'); }
 
 function fmt(text) {
-  const lines = text.split('\n');
-  let html = '';
+  const lines = text.split('\n'); let html = '';
   for (const line of lines) {
-    const t = line.trim();
-    if (!t) continue;
+    const t = line.trim(); if (!t) continue;
     if (t.startsWith('●')) {
-      const c = t.replace(/^●\s*/, '');
-      const ci = c.indexOf(':');
+      const c = t.replace(/^●\s*/, ''); const ci = c.indexOf(':');
       if (ci > 0 && ci < 50) {
         html += `<div class="ri"><span class="rb">●</span><span><strong>${c.slice(0,ci)}:</strong> ${c.slice(ci+1).trim()}</span></div>`;
       } else {
@@ -337,7 +283,7 @@ function fmt(text) {
   return html;
 }
 
-function buildIntroScript(topic) {
+function buildIntro(topic) {
   let html = '';
   for (const line of topic.intro) {
     if (line.type === 'stage') {
@@ -353,7 +299,12 @@ function buildIntroScript(topic) {
 function openTopic(id) {
   curTopic = TOPICS.find(t => t.id === id);
   document.getElementById('intro-topbar-title').textContent = curTopic.name;
-  document.getElementById('intro-script-content').innerHTML = buildIntroScript(curTopic);
+  // Google Drive direct stream URL
+  const videoSrc = `https://drive.google.com/uc?export=download&id=${curTopic.videoId}`;
+  const v = document.getElementById('intro-video');
+  v.src = videoSrc;
+  v.load();
+  document.getElementById('intro-script-content').innerHTML = buildIntro(curTopic);
   document.getElementById('main-query-text').textContent = curTopic.query;
   show('s-intro');
 }
@@ -362,23 +313,17 @@ function openMainResponse() {
   document.getElementById('resp-back-label').textContent = curTopic.name;
   document.getElementById('resp-topbar-title').textContent = curTopic.name;
   document.getElementById('resp-query-text').textContent = curTopic.query;
-  document.getElementById('resp-body').innerHTML = fmt(curTopic.response);
-
-  // After response stage direction
-  let afterHtml = `<p class="stage-direction" style="margin-top:16px">*${curTopic.afterResponse}*</p>`;
-  document.getElementById('resp-body').innerHTML += afterHtml;
-
-  // Follow-ups
-  const fuBtns = document.getElementById('fu-buttons');
-  fuBtns.innerHTML = curTopic.followUps.map((fu, i) =>
+  document.getElementById('resp-body').innerHTML =
+    fmt(curTopic.response) +
+    `<p class="stage-direction" style="margin-top:16px">*${curTopic.afterResponse}*</p>`;
+  document.getElementById('fu-buttons').innerHTML = curTopic.followUps.map((fu, i) =>
     `<button class="fu-btn" onclick="openFollowUp(${i})"><span class="fu-btn-text">${fu.query}</span><span class="fu-btn-arrow">›</span></button>`
   ).join('');
-
   show('s-response');
 }
 
-function openFollowUp(index) {
-  const fu = curTopic.followUps[index];
+function openFollowUp(i) {
+  const fu = curTopic.followUps[i];
   document.getElementById('fu-back-label').textContent = curTopic.name;
   document.getElementById('fu-topbar-title').textContent = curTopic.name;
   document.getElementById('fu-query-text').textContent = fu.query;
@@ -386,13 +331,9 @@ function openFollowUp(index) {
   show('s-fu-response');
 }
 
-// Build home
 document.getElementById('topic-list').innerHTML = TOPICS.map(t =>
   `<div class="topic-card" onclick="openTopic('${t.id}')">
-    <div class="topic-left">
-      <div class="topic-name">${t.name}</div>
-      <div class="topic-sub">${t.sub}</div>
-    </div>
+    <div><div class="topic-name">${t.name}</div><div class="topic-sub">${t.sub}</div></div>
     <div class="topic-arrow">›</div>
   </div>`
 ).join('');
