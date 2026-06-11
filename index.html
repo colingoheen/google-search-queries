@@ -190,7 +190,7 @@ const TOPICS = [
       {type:"stage",text:"As the host types in his phone, he/she reads aloud from the below pre-approved query."},
     ],
     query:"Can you break down how to pull off a scorpion kick?",
-    response:"Phase 1: The Forward Dive\n● Positioning: Stand facing the goal, tracking an incoming cross or lob. Let the ball float slightly behind the vertical plane of your body.\n● The Launch: Plant both feet and dive forward horizontally, throwing your chest and arms out toward the ground. Your torso should be parallel to the turf mid-air.\nPhase 2: The Spinal Arch\n● The Loaded Spring: The moment your feet leave the ground, aggressively bend both knees to a 90-degree angle, bringing your calves toward your thighs.\n● Lower Back Flex: Arch your lower back deeply to pivot your hips and swing your bent legs up over your glutes. Your heels should now face the sky.\nPhase 3: The Dual-Heel Strike\n● The Flick: Whip your heels forward over your head in a rapid, snapping motion. Keep your ankles locked perfectly rigid.\n● The Surface: Strike the exact center of the ball using the soles or heels of your cleats.\n● Eyes on Target: Keep your chin up slightly during the flight to track the ball into the net over your shoulder.\nPhase 4: The Chest-Slide Landing\n● Hand Placement: Extend both hands out in front of your face with your palms wide to meet the ground first.\n● Elbow Flexion: Bend your elbows as your hands make contact to absorb the initial downward momentum.\n● The Slide: Lower your chest and stomach to the grass, sliding forward to distribute the remaining force. Keep your legs elevated until your torso stops moving.",
+    response:"Phase 1: The Forward Dive\n● Positioning: Stand facing the goal, tracking an incoming cross or lob. Let the ball float slightly behind the vertical plane of your body.\n● The Launch: ==Plant both feet and dive forward horizontally, throwing your chest and arms out toward the ground.== Your torso should be parallel to the turf mid-air.\nPhase 2: The Spinal Arch\n● The Loaded Spring: The moment your feet leave the ground, ==aggressively bend both knees to a 90-degree angle, bringing your calves toward your thighs.==\n● Lower Back Flex: Arch your lower back deeply to pivot your hips and swing your bent legs up over your glutes. Your heels should now face the sky.\nPhase 3: The Dual-Heel Strike\n● The Flick: ==Whip your heels forward over your head in a rapid, snapping motion. Keep your ankles locked perfectly rigid.==\n● The Surface: Strike the exact center of the ball using the soles or heels of your cleats.\n● Eyes on Target: ==Keep your chin up slightly during the flight to track the ball into the net over your shoulder.==\nPhase 4: The Chest-Slide Landing\n● Hand Placement: Extend both hands out in front of your face with your palms wide to meet the ground first.\n● Elbow Flexion: Bend your elbows as your hands make contact to absorb the initial downward momentum.\n● The Slide: ==Lower your chest and stomach to the grass, sliding forward to distribute the remaining force.== Keep your legs elevated until your torso stops moving.",
     afterResponse:"Fan goes through the motions as the host reads the steps. Then attempts again. After another fail, the fan may ask follow up questions.",
     followUps:[
       {query:"Where should I look?",response:"● Keep your eyes locked onto the ball as it leaves the crosser's foot until it passes just slightly over your shoulder.\n● Trust your muscle memory for the split second the ball drops behind your head. You will not actually see your heel hit the ball.\n● The moment you dive, snap your eyes straight down to the grass. You must see exactly where your hands are going to plant so you can absorb the impact safely.\n● Do not look at the goal: Trying to watch where the ball goes will wrench your neck sideways, ruining your balance and forcing a dangerous landing."},
@@ -265,6 +265,9 @@ function goHome() {
 function goIntro() { show('s-intro'); }
 function goResponse() { show('s-response'); }
 
+function hl(str) {
+  return str.replace(/==(.+?)==/g, '<mark style="background:#e040fb;color:#000;border-radius:3px;padding:0 2px;">$1</mark>');
+}
 function fmt(text) {
   const lines = text.split('\n'); let html = '';
   for (const line of lines) {
@@ -272,14 +275,14 @@ function fmt(text) {
     if (t.startsWith('●')) {
       const c = t.replace(/^●\s*/, ''); const ci = c.indexOf(':');
       if (ci > 0 && ci < 50) {
-        html += `<div class="ri"><span class="rb">●</span><span><strong>${c.slice(0,ci)}:</strong> ${c.slice(ci+1).trim()}</span></div>`;
+        html += `<div class="ri"><span class="rb">●</span><span><strong>${c.slice(0,ci)}:</strong> ${hl(c.slice(ci+1).trim())}</span></div>`;
       } else {
-        html += `<div class="ri"><span class="rb">●</span><span>${c}</span></div>`;
+        html += `<div class="ri"><span class="rb">●</span><span>${hl(c)}</span></div>`;
       }
     } else if (t.endsWith(':') && t.length < 60 && !t.startsWith('●')) {
       html += `<div class="rh">${t.slice(0,-1)}</div>`;
     } else {
-      html += `<p>${t}</p>`;
+      html += `<p>${hl(t)}</p>`;
     }
   }
   return html;
